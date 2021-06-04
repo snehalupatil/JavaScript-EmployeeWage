@@ -1,4 +1,4 @@
-console.log("Welcome to Java Script EmployeeWage");
+console.log("**Welcome to Java Script EmployeeWage**");
 
 //UC1: Check employee is absent or present
 
