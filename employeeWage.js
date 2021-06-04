@@ -54,3 +54,15 @@ switch(empCheck){
 }
 
 console.log("Daily Employee Wage: " +empWage);
+
+
+//UC4: Calculate Wage for Month
+const NUM_OF_WORKING_DAYS = 20;
+
+
+for(let day = 0; day < NUM_OF_WORKING_DAYS; day++){
+    let empCheck = Math.floor(Math.random() * 10) % 3;
+    empHrs += getWorkingHours(empCheck);
+}
+let empWage1 = empHrs * WAGE_PER_HOUR;
+console.log("Total Hrs: " +empHrs+ " Emp Wage: " + empWage1);
