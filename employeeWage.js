@@ -36,3 +36,21 @@ switch(empCheck){
 }
 let empWage = empHrs * WAGE_PER_HOUR;
 console.log("Daily Employee Wage: " +empWage);  
+
+
+//UC3: Write Function for Daily Working Hours
+//Function to calculate Daily working Hours
+function getWorkingHours(empCheck){
+switch(empCheck){
+	case IS_PART_TIME:
+		return PART_TIME_HOURS;
+	
+	  case IS_FULL_TIME:
+		  return FULL_TIME_HOURS;
+		  
+	  default:
+		  return 0;
+	}
+}
+
+console.log("Daily Employee Wage: " +empWage);
