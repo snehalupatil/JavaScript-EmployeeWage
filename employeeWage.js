@@ -52,14 +52,11 @@ switch(empCheck){
 		  return 0;
 	}
 }
-
 console.log("Daily Employee Wage: " +empWage);
 
 
 //UC4: Calculate Wage for Month
 const NUM_OF_WORKING_DAYS = 20;
-
-
 for(let day = 0; day < NUM_OF_WORKING_DAYS; day++){
     let empCheck = Math.floor(Math.random() * 10) % 3;
     empHrs += getWorkingHours(empCheck);
@@ -80,3 +77,23 @@ while(totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS 
 }
 let empWage2 = totalEmpHrs * WAGE_PER_HOUR;
 console.log("Total Days: " +totalWorkingDays+ " Total hrs: " +totalEmpHrs+ " Emp Wage: " +empWage2 );
+
+
+//UC6: calculate Employee wage till number of working Days using array
+function calcDailyWage(emphrs){
+        return empHrs * WAGE_PER_HOUR;
+    }
+
+let empDailyWageArr = new Array();
+
+while (totalEmpHrs <= MAX_HRS_IN_MONTH
+	&& totalWorkingDays < NUM_OF_WORKING_DAYS){
+		totalWorkingDays++;
+		let empCheck = Math.floor(Math.random() * 10) % 3;
+		let empHrs = getWorkingHours(empCheck);
+		totalEmpHrs= empHrs;
+		empDailyWageArr.push(calcDailyWage(empHrs));
+	}
+	let empWage3 = calcDailyWage(totalEmpHrs);
+	console.log("Total Days: " + totalWorkingDays +
+				"  Total Hrs: " + totalEmpHrs + "  Emp Wage: " +empWage3);
