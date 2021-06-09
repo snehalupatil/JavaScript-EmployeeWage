@@ -344,3 +344,33 @@ function getWorkingHours(empCheck){
 }
 
 console.log("Showing Daily Hours Worked and Wage Earned: " +empDailyHrsAndWageArr);
+
+//UC11
+
+let totalWages = empDailyHrsAndWageArr
+				  .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage > 0)
+				  .reduce((totalWage,dailyHrsAndWage) => totalWage += dailyHrsAndWage.dailyWage,0);
+
+
+let totalHours = empDailyHrsAndWageArr
+				  .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage > 0)
+				  .reduce((totalHours,dailyHrsAndWage) => totalHours += dailyHrsAndWage.dailyHours,0);
+
+
+console.log("UC 11A Total Hours: " +totalHours+ " total Wages: "+totalWages);
+
+console.log("UC 11B Logging Full Work Days")
+empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 8)
+					 .forEach(dailyHrsAndWage => console.log(dailyHrsAndWage.toString()));
+
+let paratWorkingDaystrArr = empDailyHrsAndWageArr
+							.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours==4)
+							.map(dailyHrsAndWage => dailyHrsAndWage.toString());
+							
+console.log("\nUC 11C PartWorkingDayString: "+ paratWorkingDaystrArr);
+
+let nonWorkingDaysNums = empDailyHrsAndWageArr			
+						.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours==0)
+						.map(dailyHrsAndWage => dailyHrsAndWage.dayNum);
+						
+console.log("UC 11D NonWorkingDayNums: " +nonWorkingDaysNums);	
